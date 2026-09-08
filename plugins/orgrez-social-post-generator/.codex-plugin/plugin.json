@@ -14,10 +14,7 @@
     "category": "Productivity",
     "capabilities": ["Batch image generation", "Brand consistency", "Cross-slide visual continuity", "Long carousel workflow", "Single-slide revision", "ZIP export"],
     "defaultPrompt": [
-      "Vyplň formulář a vytvoř až pět variant jednoho příspěvku.",
-      "Vyplň formulář a vytvoř celý vizuálně propojený carousel najednou.",
-      "Předělej pouze vybraný slide existujícího carouselu a vytvoř aktualizovaný ZIP.",
-      "Vytvoř variantu postu bez maskota veverky."
+      "Použij $generator-prispevku-veverka a zpracuj toto zadání:\n\nTyp příspěvku: \nRozměr: \nVeverka: \nObsah: \nPočet variant/slidů: \nPřesný text do obrázku: "
     ],
     "brandColor": "#FF6A00",
     "logo": "./assets/orgrezio-logo.svg",
