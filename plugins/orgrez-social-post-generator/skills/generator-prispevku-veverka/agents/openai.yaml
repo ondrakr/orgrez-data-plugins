@@ -1,5 +1,5 @@
 interface:
   display_name: "Generátor příspěvků – veverka ORGREZ"
-  short_description: "Tvoří značkové posty s maskotem ORGREZ"
+  short_description: "Tvoří až 5 značkových postů s maskotem"
   brand_color: "#FF6A00"
-  default_prompt: "Použij $generator-prispevku-veverka a vytvoř PNG příspěvku podle mého tématu, textu a formátu."
+  default_prompt: "Použij $generator-prispevku-veverka a vytvoř až pět PNG variant podle mého tématu, textu a formátu."

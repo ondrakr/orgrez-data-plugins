@@ -1,6 +1,6 @@
 ---
 name: generator-prispevku-veverka
-description: Vytváří hotové PNG příspěvky a vizuálně propojené carousely pro ORGREZ/Orgrezio podle tématu, přesně zadaného textu a rozměru. Použij pro značkovou grafiku s volitelným maskotem veverkou; nepoužívej pro obecnou grafiku mimo vizuální identitu ORGREZ.
+description: Vytváří jeden až pět hotových PNG příspěvků nebo vizuálně propojených carouselových slidů pro ORGREZ/Orgrezio podle tématu, přesně zadaného textu a rozměru. Použij pro značkovou grafiku s volitelným maskotem veverkou; nepoužívej pro obecnou grafiku mimo vizuální identitu ORGREZ.
 ---
 
 # Generátor příspěvků – veverka ORGREZ
@@ -14,6 +14,8 @@ Vyžádej si chybějící údaje před generováním:
 - téma nebo obsah příspěvku;
 - přesné texty, které mají být viditelné, minimálně nadpis;
 - rozměr nebo poměr stran podle zadání uživatele.
+
+Počet výstupů je volitelný: výchozí je jeden, maximum je pět v jedné dávce. Rozlišuj, zda uživatel žádá několik variant stejného postu, nebo několik navazujících carouselových slidů. Pokud to z formulace není jasné a rozdíl ovlivní výsledek, stručně se doptej.
 
 Nevymýšlej chybějící copy. Volitelné položky jako podnadpis, štítek, CTA, citace nebo jméno autora použij pouze tehdy, když je uživatel výslovně zadá.
 
@@ -56,9 +58,22 @@ Když se text nevejde, nejprve změň zalomení, kompozici a přiměřeně velik
 5. Ověř rozměry, text, logo, URL, barvy, identitu maskota a absenci nevyžádaných znaků.
 6. Odevzdej hotový PNG.
 
+## Dávka až pěti variant
+
+Když uživatel požádá o dvě až pět variant stejného postu, vytvoř přesně požadovaný počet v jednom pracovním běhu a vrať je společně v jedné odpovědi. Nečekej na schválení mezi variantami.
+
+- Každá varianta je samostatný plnohodnotný PNG soubor ve stejných zadaných rozměrech, nikoli výřez, náhledový arch nebo koláž.
+- Zachovej ve všech variantách úplně stejné schválené texty, logo, URL a pravidla značky.
+- Varianty smysluplně odliš kompozicí, vizuální metaforou, pózou či přítomností maskota a převahou oranžového nebo modrého akcentu. Nevytvářej jen kosmeticky odlišné kopie.
+- Pokud nástroj podporuje dávkové generování, použij je. Jinak proveď jednotlivá generování souběžně, je-li to možné, a výstupy ukaž až po dokončení celé dávky.
+- Když některá varianta selže kontrolou, oprav pouze vadné kusy. Nesnižuj potichu požadovaný počet.
+- Při požadavku na více než pět výstupů nabídni rozdělení do dávek po nejvýše pěti.
+
 ## Carousel
 
-Nejdříve navrhni stručnou osnovu všech slidů: účel, přesný text, roli maskota a hlavní kompoziční motiv každého slidu. Požádej o schválení osnovy. Potom generuj slide po slidu a po každém počkej na schválení nebo připomínky.
+Nejdříve navrhni stručnou osnovu všech slidů: účel, přesný text, roli maskota a hlavní kompoziční motiv každého slidu. Požádej o schválení osnovy. Ve výchozím režimu potom generuj slide po slidu a po každém počkej na schválení nebo připomínky.
+
+Když uživatel výslovně požádá o carousel „najednou“, „v jedné dávce“ nebo bez průběžného schvalování, po schválení osnovy vytvoř současně až pět slidů a vrať je společně jako samostatné PNG soubory. Delší carousel rozděl do dávek po nejvýše pěti; mezi dávkami lze zapracovat připomínky.
 
 Carousel musí působit jako jeden celek. Před prvním slidem stanov společný systém: mřížku, okraje, typografickou hierarchii, dominantní motiv, zacházení s logem a URL, rytmus barev a případnou kontinuitu ilustrace. U dalších slidů používej schválené předchozí slidy jako další vizuální reference. Zachovej stejné rozměry, měřítko prvků a podobu maskota, ale dovol smysluplné variace kompozice. Čísla slidů přidávej jen na výslovné zadání.
 
