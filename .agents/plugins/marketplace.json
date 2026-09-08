@@ -1,0 +1,20 @@
+{
+  "name": "orgrez-data",
+  "interface": {
+    "displayName": "Orgrez Data"
+  },
+  "plugins": [
+    {
+      "name": "orgrez-social-post-generator",
+      "source": {
+        "source": "local",
+        "path": "./plugins/orgrez-social-post-generator"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
