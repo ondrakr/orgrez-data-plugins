@@ -15,8 +15,8 @@ Při spuštění nabídni uživateli předvyplněnou osnovu níže. Pokud ji ji�
 Typ příspěvku:
 Rozměr:
 Veverka:
+Obsah:
 Počet variant/slidů:
-Téma/obsah:
 Přesný text do obrázku:
 ```
 
@@ -28,7 +28,7 @@ Vyžádej si chybějící údaje před generováním:
 - přesné texty, které mají být viditelné, minimálně nadpis;
 - rozměr nebo poměr stran podle zadání uživatele.
 
-U samostatného postu je výchozí počet variant jedna a maximum je pět. U karuselu je výchozí počet pět slidů. Uživatel může zadat vyšší počet, například deset; všechny slidy vytvoř bez průběžného schvalování a vrať je společně. Rozlišuj, zda uživatel žádá několik variant stejného postu, nebo několik navazujících carouselových slidů. Pokud to z formulace není jasné a rozdíl ovlivní výsledek, stručně se doptej.
+U samostatného postu je výchozí počet variant jedna a maximum je pět. Karusel nemá výchozí počet slidů. Urči jej pouze tehdy, když z obsahu jednoznačně plyne, například z očíslovaných částí nebo přesného seznamu slidů. Pokud přesný počet nebo rozdělení obsahu není jasné, doptej se a nezačínej generovat žádný obrázek, dokud nebude počet i obsah jednotlivých slidů jednoznačný. Uživatel může zadat i vyšší počet, například deset; všechny slidy vytvoř bez průběžného schvalování a vrať je společně. Rozlišuj, zda uživatel žádá několik variant stejného postu, nebo několik navazujících carouselových slidů.
 
 Nevymýšlej chybějící copy. Volitelné položky jako podnadpis, štítek, CTA, citace nebo jméno autora použij pouze tehdy, když je uživatel výslovně zadá.
 
@@ -84,11 +84,13 @@ Když uživatel požádá o dvě až pět variant stejného postu, vytvoř přes
 
 ## Carousel
 
-Když je `Typ příspěvku` karusel/carousel, vytvoř automaticky pět slidů, pokud uživatel neuvede jiný počet. Po obdržení kompletního formuláře nevyžaduj schválení osnovy ani jednotlivých slidů: navrhni obsahové rozdělení interně, vytvoř všechny slidy a vrať je společně jako samostatné PNG soubory.
+Když je `Typ příspěvku` karusel/carousel, nejprve ověř, že znáš přesný počet slidů a přesný obsah každého z nich. Počet nikdy nedoplňuj výchozí hodnotou. Lze jej odvodit jen z jednoznačně strukturovaného obsahu; jinak se doptej. Dokud počet a rozdělení obsahu nejsou jasné, nevolej obrazový nástroj a nezačínej generovat. Jakmile je zadání kompletní, nevyžaduj schválení jednotlivých slidů: vytvoř všechny a vrať je společně jako samostatné PNG soubory.
 
 Přijmi i delší carousel, například deset slidů. Pokud obrazový nástroj omezuje počet současných výstupů, rozděl práci interně do menších dávek, ale uživatele mezi nimi nezastavuj a odevzdej celý carousel najednou. Při dílčím selhání oprav jen vadné slidy a nesnižuj požadovaný počet. Průběžné schvalování použij pouze tehdy, když o něj uživatel výslovně požádá.
 
-Carousel musí působit jako jeden celek. Před prvním slidem stanov společný systém: mřížku, okraje, typografickou hierarchii, dominantní motiv, zacházení s logem a URL, rytmus barev a případnou kontinuitu ilustrace. U dalších slidů používej schválené předchozí slidy jako další vizuální reference. Zachovej stejné rozměry, měřítko prvků a podobu maskota, ale dovol smysluplné variace kompozice. Čísla slidů přidávej jen na výslovné zadání.
+Carousel musí působit jako jeden celek. Před prvním slidem stanov společný systém: mřížku, okraje, typografickou hierarchii, dominantní motiv, zacházení s logem a URL, rytmus barev a případnou kontinuitu ilustrace. U dalších slidů používej dříve vytvořené finální slidy jako další vizuální reference. Zachovej stejné rozměry, měřítko prvků a podobu maskota, ale dovol smysluplné variace kompozice. Čísla slidů přidávej jen na výslovné zadání.
+
+Po dokončení carouselu ulož finální obrázky jako `slide-01.png`, `slide-02.png` a dále ve správném pořadí. Zkontroluj počet souborů a jejich rozměry, potom všechny finální PNG zabal do jediného archivu `orgrez-carousel-<kratky-nazev>.zip`. Do ZIPu nevkládej koncepty, chybné varianty ani pomocné soubory. V odpovědi nabídni ZIP jako hlavní soubor ke stažení; jednotlivé slidy můžeš navíc zobrazit pro kontrolu. Carousel o více slidech není dokončený, dokud ZIP nevznikne a neobsahuje přesně všechny finální slidy.
 
 ## Výstupní kontrola
 
@@ -102,3 +104,4 @@ Výstup je hotový pouze tehdy, když:
 - případná veverka odpovídá referenčnímu listu;
 - kompozice odpovídá obsahu a není jen slepou kopií ukázky;
 - u carouselu je jasná vizuální kontinuita se schválenými slidy.
+- víceslidový carousel je navíc odevzdaný jako ZIP se správně seřazenými finálními PNG.
