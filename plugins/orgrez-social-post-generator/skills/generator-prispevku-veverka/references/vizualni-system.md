@@ -23,6 +23,22 @@ Typické prvky:
 
 Nejsou povinné všechny prvky současně. Vybírej jen ty, které podporují sdělení. Nepřebírej cizí fotografie, jména, pozice ani ukázkový text z referencí.
 
+## Propojení carouselu
+
+Carousel navrhuj jako souvislý vodorovný pás o šířce `počet slidů × šířka jednoho slidu`. Jednotlivé slidy musí fungovat samostatně, ale při položení vedle sebe mají odhalit společný rytmus a fyzicky navazující grafiku.
+
+Před generováním stanov pro každé rozhraní mezi slidy stručnou hranovou návaznost: který prvek opouští pravý okraj slidu, v jaké výšce, pod jakým úhlem a s jakou barvou a tloušťkou; na levém okraji následujícího slidu musí pokračovat se stejnými parametry. Alespoň jeden takový prvek musí spojovat každou sousední dvojici.
+
+Vrstevnicové vlnky jsou výchozí charakteristický spojovací motiv ORGREZIO. V carouselu je použij opakovaně a nech je překročit alespoň dvě rozhraní mezi slidy. Nemusí být na každém slidu, pokud jejich roli převezme jiný silnější motiv. Další vhodné návaznosti:
+
+- oranžová nebo modrá plocha či 3D podstavec pokračující přes ořez;
+- tenká linka, cesta, graf nebo šipka vedená přes několik slidů;
+- karta nebo geometrický tvar záměrně rozdělený mezi dva slidy;
+- ocas, gesto, pohled nebo pohyb veverky směřující k obsahu dalšího slidu;
+- postupná změna měřítka nebo polohy jednoho motivu, která vytváří děj.
+
+Nestav kontinuitu pouze na opakování loga, stejné barvy pozadí nebo stejného písma. To je konzistence značky, nikoli vizuální propojení. Text, logo a URL drž v bezpečné zóně; přes okraje mohou pokračovat pouze dekorativní nebo obrazové prvky, jejichž ořez nesnižuje srozumitelnost jednotlivého slidu.
+
 ## Kompoziční rozhodování
 
 - Krátký úderný nadpis: dej přednost výrazné typografii a jednoduchému gestu maskota.

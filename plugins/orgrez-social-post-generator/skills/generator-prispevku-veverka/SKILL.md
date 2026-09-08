@@ -88,7 +88,11 @@ Když je `Typ příspěvku` karusel/carousel, nejprve ověř, že znáš přesn�
 
 Přijmi i delší carousel, například deset slidů. Pokud obrazový nástroj omezuje počet současných výstupů, rozděl práci interně do menších dávek, ale uživatele mezi nimi nezastavuj a odevzdej celý carousel najednou. Při dílčím selhání oprav jen vadné slidy a nesnižuj požadovaný počet. Průběžné schvalování použij pouze tehdy, když o něj uživatel výslovně požádá.
 
-Carousel musí působit jako jeden celek. Před prvním slidem stanov společný systém: mřížku, okraje, typografickou hierarchii, dominantní motiv, zacházení s logem a URL, rytmus barev a případnou kontinuitu ilustrace. U dalších slidů používej dříve vytvořené finální slidy jako další vizuální reference. Zachovej stejné rozměry, měřítko prvků a podobu maskota, ale dovol smysluplné variace kompozice. Čísla slidů přidávej jen na výslovné zadání.
+Carousel musí působit jako jedna široká kompozice rozdělená na jednotlivé slidy, ne jako série samostatných postů se stejnými barvami. Před prvním generováním si interně připrav společný vizuální plán a hranové návaznosti podle části „Propojení carouselu“ v [`references/vizualni-system.md`](references/vizualni-system.md). Pro každou dvojici sousedních slidů musí přes společnou hranu pokračovat alespoň jeden záměrný motiv. Výchozím spojovacím motivem jsou jemné vrstevnicové vlnky; doplnit nebo nahradit je podle obsahu mohou barevné pásy, podstavce, linky, karty, oříznuté ilustrace nebo směr pohledu a pohybu veverky.
+
+Naplánuj společnou mřížku, okraje, typografickou hierarchii, dominantní motiv, zacházení s logem a URL, rytmus barev a kontinuitu ilustrace. U dalších slidů používej předchozí finální slide a plán následujícího slidu jako obrazové reference. Navazující prvek musí na obou stranách švu souhlasit polohou, směrem, tloušťkou, barvou a měřítkem. Dovol smysluplné variace kompozice, ale neměň svévolně vizuální systém uprostřed carouselu. Čísla slidů přidávej jen na výslovné zadání.
+
+Po vygenerování všech slidů je dočasně spoj bez mezer do jednoho vodorovného kontrolního pásu a vizuálně zkontroluj každý šev. Oprav pouze slidy s nenavazujícím motivem. Kontrolní pás je pracovní pomůcka: nevkládej jej do výsledného ZIPu a neodevzdávej ho místo jednotlivých PNG.
 
 Po dokončení carouselu ulož finální obrázky jako `slide-01.png`, `slide-02.png` a dále ve správném pořadí. Zkontroluj počet souborů a jejich rozměry, potom všechny finální PNG zabal do jediného archivu `orgrez-carousel-<kratky-nazev>.zip`. Do ZIPu nevkládej koncepty, chybné varianty ani pomocné soubory. V odpovědi nabídni ZIP jako hlavní soubor ke stažení; jednotlivé slidy můžeš navíc zobrazit pro kontrolu. Carousel o více slidech není dokončený, dokud ZIP nevznikne a neobsahuje přesně všechny finální slidy.
 
@@ -97,7 +101,7 @@ Po dokončení carouselu ulož finální obrázky jako `slide-01.png`, `slide-02
 Když uživatel požádá například „předělej slide 4“, přepni do revizního režimu. Neupravuj ani znovu negeneruj ostatní slidy.
 
 1. Urči číslo každého slidu určeného k opravě a přesnou požadovanou změnu. Pokud změna není jednoznačná, doptej se před generováním.
-2. Použij původní cílový slide jako hlavní obrazovou referenci a sousední slidy, případně titulní slide, jako kontext pro mřížku, hierarchii, barvy, typografii a kontinuitu maskota.
+2. Použij původní cílový slide jako hlavní obrazovou referenci a sousední slidy, případně titulní slide, jako kontext pro mřížku, hierarchii, barvy, typografii a kontinuitu maskota. Z obou sousedních slidů odvoď přesnou polohu, směr, tloušťku, barvu a měřítko prvků vstupujících přes hrany opravovaného slidu.
 3. Zachovej text cílového slidu přesně beze změny, pokud uživatel výslovně nezadá nový text. Ani v revizním režimu nevymýšlej copy.
 4. Vygeneruj pouze označený slide nebo označené slidy ve stejných rozměrech jako původní carousel. Ověř jejich návaznost na bezprostředně předcházející a následující slide.
 5. Původní soubory nepřepisuj. Aktualizovanou sadu sestav jako novou revizi: nahraď v kopii sady pouze opravené soubory a ostatní PNG zachovej beze změny, včetně názvů a pořadí.
@@ -116,6 +120,6 @@ Výstup je hotový pouze tehdy, když:
 - barvy a typografie odpovídají značce;
 - případná veverka odpovídá referenčnímu listu;
 - kompozice odpovídá obsahu a není jen slepou kopií ukázky;
-- u carouselu je jasná vizuální kontinuita se schválenými slidy.
+- u carouselu přes každou společnou hranu sousedních slidů záměrně navazuje alespoň jeden vizuální motiv a kontrolní pás neodhaluje rušivé skoky;
 - víceslidový carousel je navíc odevzdaný jako ZIP se správně seřazenými finálními PNG.
 - při revizi carouselu byly znovu vytvořeny pouze označené slidy a nový ZIP obsahuje všechny původní nezměněné slidy i opravené verze na správných pozicích.
