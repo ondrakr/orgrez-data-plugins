@@ -1,6 +1,6 @@
 ---
 name: generator-prispevku-veverka
-description: Vytváří jeden až pět hotových PNG příspěvků nebo vizuálně propojených carouselových slidů pro ORGREZ/Orgrezio podle tématu, přesně zadaného textu a rozměru. Použij pro značkovou grafiku s volitelným maskotem veverkou; nepoužívej pro obecnou grafiku mimo vizuální identitu ORGREZ.
+description: Vytváří hotové PNG příspěvky, až pět jejich variant a libovolně dlouhé vizuálně propojené carousely pro ORGREZ/Orgrezio z vyplňovacího formuláře. Použij pro značkovou grafiku s volitelným maskotem veverkou; nepoužívej pro obecnou grafiku mimo vizuální identitu ORGREZ.
 ---
 
 # Generátor příspěvků – veverka ORGREZ
@@ -9,13 +9,26 @@ Vytvoř finální obrázek příspěvku, ne pouze prompt nebo popis. Ke generov�
 
 ## Povinný vstup
 
+Při spuštění nabídni uživateli předvyplněnou osnovu níže. Pokud ji již vyplnil v úvodním promptu, neopakuj ji a rovnou zpracuj zadání. Zachovej popisky a prázdná pole, aby uživatel mohl psát přímo za dvojtečku:
+
+```text
+Typ příspěvku:
+Rozměr:
+Veverka:
+Počet variant/slidů:
+Téma/obsah:
+Přesný text do obrázku:
+```
+
+Pro `Veverka` přijmi například `ano`, `ne` nebo popis pózy a emoce. Pro `Typ příspěvku` přijmi běžné varianty slov `post`, `příspěvek` a `karusel`/`carousel` bez ohledu na velikost písmen.
+
 Vyžádej si chybějící údaje před generováním:
 
 - téma nebo obsah příspěvku;
 - přesné texty, které mají být viditelné, minimálně nadpis;
 - rozměr nebo poměr stran podle zadání uživatele.
 
-Počet výstupů je volitelný: výchozí je jeden, maximum je pět v jedné dávce. Rozlišuj, zda uživatel žádá několik variant stejného postu, nebo několik navazujících carouselových slidů. Pokud to z formulace není jasné a rozdíl ovlivní výsledek, stručně se doptej.
+U samostatného postu je výchozí počet variant jedna a maximum je pět. U karuselu je výchozí počet pět slidů. Uživatel může zadat vyšší počet, například deset; všechny slidy vytvoř bez průběžného schvalování a vrať je společně. Rozlišuj, zda uživatel žádá několik variant stejného postu, nebo několik navazujících carouselových slidů. Pokud to z formulace není jasné a rozdíl ovlivní výsledek, stručně se doptej.
 
 Nevymýšlej chybějící copy. Volitelné položky jako podnadpis, štítek, CTA, citace nebo jméno autora použij pouze tehdy, když je uživatel výslovně zadá.
 
@@ -71,9 +84,9 @@ Když uživatel požádá o dvě až pět variant stejného postu, vytvoř přes
 
 ## Carousel
 
-Nejdříve navrhni stručnou osnovu všech slidů: účel, přesný text, roli maskota a hlavní kompoziční motiv každého slidu. Požádej o schválení osnovy. Ve výchozím režimu potom generuj slide po slidu a po každém počkej na schválení nebo připomínky.
+Když je `Typ příspěvku` karusel/carousel, vytvoř automaticky pět slidů, pokud uživatel neuvede jiný počet. Po obdržení kompletního formuláře nevyžaduj schválení osnovy ani jednotlivých slidů: navrhni obsahové rozdělení interně, vytvoř všechny slidy a vrať je společně jako samostatné PNG soubory.
 
-Když uživatel výslovně požádá o carousel „najednou“, „v jedné dávce“ nebo bez průběžného schvalování, po schválení osnovy vytvoř současně až pět slidů a vrať je společně jako samostatné PNG soubory. Delší carousel rozděl do dávek po nejvýše pěti; mezi dávkami lze zapracovat připomínky.
+Přijmi i delší carousel, například deset slidů. Pokud obrazový nástroj omezuje počet současných výstupů, rozděl práci interně do menších dávek, ale uživatele mezi nimi nezastavuj a odevzdej celý carousel najednou. Při dílčím selhání oprav jen vadné slidy a nesnižuj požadovaný počet. Průběžné schvalování použij pouze tehdy, když o něj uživatel výslovně požádá.
 
 Carousel musí působit jako jeden celek. Před prvním slidem stanov společný systém: mřížku, okraje, typografickou hierarchii, dominantní motiv, zacházení s logem a URL, rytmus barev a případnou kontinuitu ilustrace. U dalších slidů používej schválené předchozí slidy jako další vizuální reference. Zachovej stejné rozměry, měřítko prvků a podobu maskota, ale dovol smysluplné variace kompozice. Čísla slidů přidávej jen na výslovné zadání.
 

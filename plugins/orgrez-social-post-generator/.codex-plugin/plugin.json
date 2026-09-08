@@ -1,7 +1,7 @@
 {
   "name": "orgrez-social-post-generator",
-  "version": "0.2.0",
-  "description": "Generátor jednoho až pěti značkových PNG příspěvků a carouselových slidů ORGREZIO s maskotem veverkou.",
+  "version": "0.3.0",
+  "description": "Generátor značkových PNG příspěvků a libovolně dlouhých carouselů ORGREZIO s maskotem veverkou.",
   "author": {
     "name": "Orgrez Data"
   },
@@ -9,13 +9,13 @@
   "interface": {
     "displayName": "Generátor příspěvků – veverka ORGREZ",
     "shortDescription": "Tvoří posty a carousely ve stylu ORGREZIO.",
-    "longDescription": "Vytváří jeden až pět hotových PNG příspěvků nebo vizuálně propojených carouselových slidů podle tématu, přesně zadaného textu a rozměru. Zachovává barvy, typografii, logo a podobu maskota ORGREZ.",
+    "longDescription": "Vytváří hotové PNG příspěvky a vizuálně propojené carousely z jednoduchého vstupního formuláře. Karusel má standardně pět slidů, ale lze zadat i vyšší počet a vytvořit jej bez průběžného schvalování.",
     "developerName": "Orgrez Data",
     "category": "Productivity",
-    "capabilities": ["Batch image generation", "Brand consistency", "Carousel workflow"],
+    "capabilities": ["Batch image generation", "Brand consistency", "Long carousel workflow"],
     "defaultPrompt": [
-      "Vytvoř až pět variant příspěvku z tématu, přesného textu a rozměru.",
-      "Navrhni a vytvoř vizuálně propojený carousel.",
+      "Vyplň formulář a vytvoř až pět variant jednoho příspěvku.",
+      "Vyplň formulář a vytvoř celý vizuálně propojený carousel najednou.",
       "Vytvoř variantu postu bez maskota veverky."
     ],
     "brandColor": "#FF6A00",
