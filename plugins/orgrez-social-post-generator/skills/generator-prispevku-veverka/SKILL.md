@@ -1,6 +1,6 @@
 ---
 name: generator-prispevku-veverka
-description: Vytváří hotové PNG příspěvky, až pět jejich variant a libovolně dlouhé vizuálně propojené carousely pro ORGREZ/Orgrezio z vyplňovacího formuláře. Použij pro značkovou grafiku s volitelným maskotem veverkou; nepoužívej pro obecnou grafiku mimo vizuální identitu ORGREZ.
+description: Vytváří a cíleně upravuje hotové PNG příspěvky, až pět jejich variant a libovolně dlouhé vizuálně propojené carousely pro ORGREZ/Orgrezio. Použij pro značkovou grafiku s volitelným maskotem veverkou; nepoužívej pro obecnou grafiku mimo vizuální identitu ORGREZ.
 ---
 
 # Generátor příspěvků – veverka ORGREZ
@@ -92,6 +92,19 @@ Carousel musí působit jako jeden celek. Před prvním slidem stanov společný
 
 Po dokončení carouselu ulož finální obrázky jako `slide-01.png`, `slide-02.png` a dále ve správném pořadí. Zkontroluj počet souborů a jejich rozměry, potom všechny finální PNG zabal do jediného archivu `orgrez-carousel-<kratky-nazev>.zip`. Do ZIPu nevkládej koncepty, chybné varianty ani pomocné soubory. V odpovědi nabídni ZIP jako hlavní soubor ke stažení; jednotlivé slidy můžeš navíc zobrazit pro kontrolu. Carousel o více slidech není dokončený, dokud ZIP nevznikne a neobsahuje přesně všechny finální slidy.
 
+## Oprava vybraného slidu carouselu
+
+Když uživatel požádá například „předělej slide 4“, přepni do revizního režimu. Neupravuj ani znovu negeneruj ostatní slidy.
+
+1. Urči číslo každého slidu určeného k opravě a přesnou požadovanou změnu. Pokud změna není jednoznačná, doptej se před generováním.
+2. Použij původní cílový slide jako hlavní obrazovou referenci a sousední slidy, případně titulní slide, jako kontext pro mřížku, hierarchii, barvy, typografii a kontinuitu maskota.
+3. Zachovej text cílového slidu přesně beze změny, pokud uživatel výslovně nezadá nový text. Ani v revizním režimu nevymýšlej copy.
+4. Vygeneruj pouze označený slide nebo označené slidy ve stejných rozměrech jako původní carousel. Ověř jejich návaznost na bezprostředně předcházející a následující slide.
+5. Původní soubory nepřepisuj. Aktualizovanou sadu sestav jako novou revizi: nahraď v kopii sady pouze opravené soubory a ostatní PNG zachovej beze změny, včetně názvů a pořadí.
+6. Vytvoř nový archiv `orgrez-carousel-<kratky-nazev>-rev<N>.zip`, který obsahuje kompletní carousel. Nabídni nový ZIP ke stažení a samostatně zobraz pouze opravené slidy, pokud uživatel nepožádá jinak.
+
+Pokud jsou původní slidy dostupné v aktuálním chatu nebo pracovním prostoru, použij je bez dalšího vyžádání. V novém chatu požádej o původní ZIP nebo všechny finální PNG. Má-li uživatel jen cílový slide, můžeš vytvořit opravený samostatný PNG, ale neslibuj kompletní aktualizovaný ZIP. Bez kompletní původní sady nevytvářej archiv, který by část carouselu vynechával nebo nahrazoval nově vymyšlenými slidy.
+
 ## Výstupní kontrola
 
 Výstup je hotový pouze tehdy, když:
@@ -105,3 +118,4 @@ Výstup je hotový pouze tehdy, když:
 - kompozice odpovídá obsahu a není jen slepou kopií ukázky;
 - u carouselu je jasná vizuální kontinuita se schválenými slidy.
 - víceslidový carousel je navíc odevzdaný jako ZIP se správně seřazenými finálními PNG.
+- při revizi carouselu byly znovu vytvořeny pouze označené slidy a nový ZIP obsahuje všechny původní nezměněné slidy i opravené verze na správných pozicích.
