@@ -18,10 +18,20 @@ const tool = {
     properties: {},
     additionalProperties: false
   },
+  outputSchema: {
+    type: "object",
+    properties: {
+      form: { type: "string", const: "orgrez-post-brief" },
+      ready: { type: "boolean" }
+    },
+    required: ["form", "ready"],
+    additionalProperties: false
+  },
   annotations: {
     readOnlyHint: true,
     openWorldHint: false,
-    destructiveHint: false
+    destructiveHint: false,
+    idempotentHint: true
   },
   _meta: {
     ui: { resourceUri: TEMPLATE_URI },

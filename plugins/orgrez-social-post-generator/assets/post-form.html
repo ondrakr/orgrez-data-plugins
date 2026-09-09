@@ -217,10 +217,7 @@
           if (!window.openai?.sendFollowUpMessage) {
             throw new Error("Tento klient neumí odeslat zadání z formuláře.");
           }
-          await window.openai.sendFollowUpMessage({
-            prompt,
-            title: "Vytvořit příspěvek ORGREZ"
-          });
+          await window.openai.sendFollowUpMessage({ prompt, scrollToBottom: true });
           status.className = "success";
           status.textContent = "Zadání bylo odesláno. Generátor teď zkontroluje, zda má vše potřebné.";
         } catch (error) {
