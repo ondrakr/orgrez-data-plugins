@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      :root {
+        color-scheme: light dark;
+        font-family: Montserrat, Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --orange: #ff6a00;
+        --blue: #1a99e6;
+        --navy: light-dark(#061d2b, #f6fbff);
+        --muted: light-dark(#52636d, #aebdc6);
+        --surface: light-dark(#ffffff, #17191c);
+        --field: light-dark(#f7fafb, #22262a);
+        --border: light-dark(#dce5e9, #3a4147);
+        --focus: light-dark(#1a99e6, #63bff3);
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        padding: 18px;
+        background: transparent;
+        color: var(--navy);
+      }
+
+      .card {
+        position: relative;
+        overflow: hidden;
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 24px;
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        background: var(--surface);
+      }
+
+      .waves {
+        position: absolute;
+        top: -32px;
+        right: -36px;
+        width: 190px;
+        height: 120px;
+        opacity: 0.24;
+        background: repeating-radial-gradient(ellipse at 100% 0%, transparent 0 9px, var(--orange) 10px 11px, transparent 12px 18px);
+        pointer-events: none;
+      }
+
+      header { position: relative; margin-bottom: 20px; padding-right: 90px; }
+      .eyebrow { margin: 0 0 6px; color: var(--orange); font-size: 12px; font-weight: 800; letter-spacing: 0.11em; text-transform: uppercase; }
+      h1 { margin: 0; font-size: 24px; line-height: 1.2; font-weight: 800; }
+      .intro { margin: 8px 0 0; color: var(--muted); font-size: 14px; line-height: 1.45; }
+
+      form { display: grid; gap: 15px; }
+      label { display: grid; gap: 7px; font-size: 14px; font-weight: 700; }
+      .optional { color: var(--muted); font-size: 12px; font-weight: 500; }
+
+      input, select, textarea {
+        width: 100%;
+        border: 1px solid var(--border);
+        border-radius: 11px;
+        padding: 11px 12px;
+        background: var(--field);
+        color: var(--navy);
+        font: inherit;
+        font-size: 14px;
+        outline: none;
+        transition: border-color 120ms ease, box-shadow 120ms ease;
+      }
+
+      textarea { min-height: 92px; resize: vertical; line-height: 1.45; }
+      #exactText { min-height: 76px; }
+      input:focus, select:focus, textarea:focus { border-color: var(--focus); box-shadow: 0 0 0 3px color-mix(in srgb, var(--focus) 18%, transparent); }
+
+      .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+      .hint { margin: -3px 0 0; color: var(--muted); font-size: 12px; line-height: 1.4; }
+
+      button {
+        min-height: 46px;
+        margin-top: 3px;
+        border: 0;
+        border-radius: 12px;
+        padding: 12px 18px;
+        background: linear-gradient(110deg, var(--orange), #ff8b38);
+        color: white;
+        font: inherit;
+        font-size: 15px;
+        font-weight: 800;
+        cursor: pointer;
+      }
+
+      button:hover { filter: brightness(1.04); }
+      button:disabled { cursor: wait; opacity: 0.65; }
+      #status { min-height: 18px; margin: 0; color: var(--muted); font-size: 13px; }
+      #status.error { color: #c33c28; }
+      #status.success { color: light-dark(#087b4c, #5ed79d); }
+
+      @media (max-width: 560px) {
+        body { padding: 10px; }
+        .card { padding: 19px; border-radius: 16px; }
+        .row { grid-template-columns: 1fr; }
+        header { padding-right: 46px; }
+        h1 { font-size: 21px; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="card">
+      <div class="waves" aria-hidden="true"></div>
+      <header>
+        <p class="eyebrow">ORGREZIO</p>
+        <h1>Zadání příspěvku</h1>
+        <p class="intro">Vyplňte obsah. U carouselu můžete počet slidů nechat prázdný, pokud jednoznačně plyne z rozepsaného obsahu.</p>
+      </header>
+
+      <form id="briefForm">
+        <div class="row">
+          <label>
+            Typ příspěvku
+            <select id="postType" required>
+              <option value="">Vyberte…</option>
+              <option value="Příspěvek">Příspěvek</option>
+              <option value="Karusel">Karusel</option>
+            </select>
+          </label>
+
+          <label>
+            Rozměr
+            <select id="size" required>
+              <option value="">Vyberte…</option>
+              <option value="1:1">1:1</option>
+              <option value="4:5">4:5</option>
+              <option value="9:16">9:16</option>
+            </select>
+          </label>
+        </div>
+
+        <label>
+          Veverka
+          <input id="squirrel" required placeholder="ano / ne / podle obsahu / popis pózy a emoce" />
+        </label>
+
+        <label>
+          Obsah
+          <textarea id="content" required placeholder="Téma, sdělení a u carouselu rozdělení obsahu po slidech…"></textarea>
+        </label>
+
+        <label>
+          Počet variant/slidů <span class="optional">volitelné, pokud je z obsahu jasný</span>
+          <input id="count" type="number" min="1" step="1" inputmode="numeric" placeholder="např. 5 nebo 10" />
+        </label>
+
+        <label>
+          Přesný text do obrázku
+          <textarea id="exactText" required placeholder="Vložte doslova všechen text, který má být v obrázku. Pro žádný text napište „bez textu“. "></textarea>
+        </label>
+
+        <button id="submitButton" type="submit">Použít zadání</button>
+        <p id="status" role="status" aria-live="polite"></p>
+      </form>
+    </main>
+
+    <script>
+      const form = document.getElementById("briefForm");
+      const submitButton = document.getElementById("submitButton");
+      const status = document.getElementById("status");
+      const fields = {
+        postType: document.getElementById("postType"),
+        size: document.getElementById("size"),
+        squirrel: document.getElementById("squirrel"),
+        content: document.getElementById("content"),
+        count: document.getElementById("count"),
+        exactText: document.getElementById("exactText")
+      };
+
+      const saved = window.openai?.widgetState;
+      if (saved && typeof saved === "object") {
+        for (const [key, element] of Object.entries(fields)) {
+          if (typeof saved[key] === "string") element.value = saved[key];
+        }
+      }
+
+      function values() {
+        return Object.fromEntries(Object.entries(fields).map(([key, element]) => [key, element.value.trim()]));
+      }
+
+      function saveDraft() {
+        window.openai?.setWidgetState?.(values());
+      }
+
+      form.addEventListener("input", saveDraft);
+      form.addEventListener("change", saveDraft);
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        if (!form.reportValidity()) return;
+
+        const brief = values();
+        const prompt = [
+          "Použij Generátor příspěvků – veverka ORGREZ a zpracuj toto zadání:",
+          "",
+          `Typ příspěvku: ${brief.postType}`,
+          `Rozměr: ${brief.size}`,
+          `Veverka: ${brief.squirrel}`,
+          `Obsah: ${brief.content}`,
+          `Počet variant/slidů: ${brief.count}`,
+          `Přesný text do obrázku: ${brief.exactText}`
+        ].join("\n");
+
+        submitButton.disabled = true;
+        status.className = "";
+        status.textContent = "Předávám zadání do konverzace…";
+
+        try {
+          if (!window.openai?.sendFollowUpMessage) {
+            throw new Error("Tento klient neumí odeslat zadání z formuláře.");
+          }
+          await window.openai.sendFollowUpMessage({
+            prompt,
+            title: "Vytvořit příspěvek ORGREZ"
+          });
+          status.className = "success";
+          status.textContent = "Zadání bylo odesláno. Generátor teď zkontroluje, zda má vše potřebné.";
+        } catch (error) {
+          status.className = "error";
+          status.textContent = error?.message || "Zadání se nepodařilo odeslat. Zkuste to znovu.";
+          submitButton.disabled = false;
+        }
+      });
+    </script>
+  </body>
+</html>

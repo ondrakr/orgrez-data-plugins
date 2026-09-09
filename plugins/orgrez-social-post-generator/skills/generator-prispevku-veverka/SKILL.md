@@ -9,16 +9,9 @@ Vytvoř finální obrázek příspěvku, ne pouze prompt nebo popis. Ke generov�
 
 ## Povinný vstup
 
-Při spuštění nabídni uživateli předvyplněnou osnovu níže. Pokud ji již vyplnil v úvodním promptu, neopakuj ji a rovnou zpracuj zadání. Zachovej popisky a prázdná pole, aby uživatel mohl psát přímo za dvojtečku:
+Když uživatel spustí plugin bez vyplněného zadání nebo požádá o formulář, zavolej nástroj `open_orgrez_post_form`. Ten zobrazí interaktivní formulář se skutečnými poli pod sebou. Textovou osnovu místo formuláře neposílej. Pokud uživatel zadání již vyplnil přímo ve zprávě, formulář neopakuj a rovnou jej zpracuj.
 
-```text
-Typ příspěvku:
-Rozměr:
-Veverka:
-Obsah:
-Počet variant/slidů:
-Přesný text do obrázku:
-```
+Formulář předá do konverzace stejných šest položek: typ příspěvku, rozměr, veverka, obsah, počet variant/slidů a přesný text do obrázku. Vstup z formuláře posuzuj stejně jako běžnou uživatelskou zprávu.
 
 Pro `Veverka` přijmi například `ano`, `ne` nebo popis pózy a emoce. Pro `Typ příspěvku` přijmi běžné varianty slov `post`, `příspěvek` a `karusel`/`carousel` bez ohledu na velikost písmen.
 

@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "orgrez-post-form": {
+      "command": "node",
+      "args": ["./scripts/form-server.mjs"],
+      "cwd": "."
+    }
+  }
+}

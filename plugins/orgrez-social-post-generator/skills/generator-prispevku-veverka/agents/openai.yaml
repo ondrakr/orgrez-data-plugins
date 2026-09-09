@@ -2,4 +2,4 @@ interface:
   display_name: "Generátor příspěvků – veverka ORGREZ"
   short_description: "Posty i dlouhé carousely ve stylu ORGREZ"
   brand_color: "#FF6A00"
-  default_prompt: "Použij $generator-prispevku-veverka a zpracuj toto zadání:\n\nTyp příspěvku: \nRozměr: \nVeverka: \nObsah: \nPočet variant/slidů: \nPřesný text do obrázku: "
+  default_prompt: "Použij $generator-prispevku-veverka a otevři interaktivní formulář pro nový příspěvek ORGREZ."
