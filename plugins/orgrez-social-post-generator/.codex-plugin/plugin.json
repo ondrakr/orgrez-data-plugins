@@ -14,7 +14,7 @@
     "category": "Productivity",
     "capabilities": ["Batch image generation", "Brand consistency", "Cross-slide visual continuity", "Long carousel workflow", "Single-slide revision", "ZIP export"],
     "defaultPrompt": [
-      "Použij $generator-prispevku-veverka a zpracuj toto zadání:\n\nTyp příspěvku: \nRozměr: \nVeverka: \nObsah: \nPočet variant/slidů: \nPřesný text do obrázku: "
+      "Typ příspěvku:\nRozměr:\nVeverka:\nObsah:\nPočet variant/slidů:\nPřesný text do obrázku:"
     ],
     "brandColor": "#FF6A00",
     "logo": "./assets/orgrezio-logo.svg",
